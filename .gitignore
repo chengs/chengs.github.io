@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-.idea
-=======
-
 *.sublime-project
 
 *.sublime-workspace
 
 .idea
-
->>>>>>> dev
