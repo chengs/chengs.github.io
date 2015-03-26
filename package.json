@@ -3,8 +3,15 @@
 	"version":"0.1.0",
 	"author":"chengs",
   	"devDependencies": {
-      "grunt": "~0.4.5",
-      "grunt-contrib-cssmin": "~0.12.0",
-      "grunt-contrib-htmlmin":"~0.4.0"
+      	"gulp":"*",
+      	"gulp-rev":"*",
+      	"gulp-rev-replace":"*",
+      	"gulp-useref":"*",
+      	"gulp-filter":"*",
+      	"gulp-uglify":"*",
+      	"gulp-csso":"*",
+      	"gulp-rename":"*",
+      	"gulp-htmlmin":"*",
+      	"del":"*"
     }
 }
