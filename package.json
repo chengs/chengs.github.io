@@ -12,6 +12,7 @@
       	"gulp-csso":"*",
       	"gulp-rename":"*",
       	"gulp-htmlmin":"*",
+        "gulp-less":"*",
       	"del":"*"
     }
 }

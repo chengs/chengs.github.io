@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var csso = require('gulp-csso');
 var rename = require("gulp-rename");
 var htmlmin = require('gulp-htmlmin');
+var less = require("gulp-less");
 var del = require('del');
 
 gulp.task("default", function() {
@@ -18,6 +19,10 @@ gulp.task("default", function() {
 
   //clean
   del(["index.html","css/product*"])
+
+  gulp.src('./css/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('./css'));
 
   return gulp.src("dev.html")
     .pipe(userefAssets)  // 解析html中build:{type}块，将里面引用到的文件合并传过来
