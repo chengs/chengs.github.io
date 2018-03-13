@@ -10,6 +10,7 @@ var htmlmin = require('gulp-htmlmin');
 var less = require("gulp-less");
 var del = require('del');
 var debug = require('gulp-debug');
+var gulpRemoveHtml = require('gulp-remove-html');
 
 gulp.task("default", function () {
   // var jsFilter = filter("**/*.js");
@@ -44,6 +45,7 @@ gulp.task("default", function () {
       collapseWhitespace: true
     }))
     .pipe(rename('index.html'))
+    .pipe(gulpRemoveHtml())
     .pipe(indexFilter.restore)
     .pipe(gulp.dest('./'));
 });
