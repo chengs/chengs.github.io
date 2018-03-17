@@ -29,6 +29,7 @@ gulp.task("default", function () {
     .pipe(gulp.dest('./css'));
 
   return gulp.src("dev.html")
+    .pipe(useref())
     // .pipe(jsFilter)
     // .pipe(uglify())             // 压缩Js
     // .pipe(jsFilter.restore())
@@ -36,16 +37,14 @@ gulp.task("default", function () {
     .pipe(csso()) // 压缩Css
     .pipe(cssFilter.restore)
     .pipe(rev())
-    .pipe(useref())
     .pipe(revReplace()) // Substitute in new filenames
-    .pipe(debug()) 
     .pipe(indexFilter)
-    .pipe(debug())
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
     .pipe(rename('index.html'))
     .pipe(gulpRemoveHtml())
     .pipe(indexFilter.restore)
+    .pipe(debug({title:'unicorn'}))
     .pipe(gulp.dest('./'));
 });
